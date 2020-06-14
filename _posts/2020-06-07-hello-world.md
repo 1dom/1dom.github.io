@@ -1,3 +1,7 @@
+---
+description: A first post with some reasons for people to read/write personal blogs.
+tags: [publishing, motivation]
+---
 # Please write a blog post
 
 This is my first published personal blog post in a long time. Like I'm sure most people in and around tech have, I've threatened to do this for too long. Here's some of the hows and whys, in hope that you'll do the same, if you haven't already.
