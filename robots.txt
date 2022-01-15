@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: 1dom.io/sitemap.xml

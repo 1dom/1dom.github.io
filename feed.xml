@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>1dom</title>
+  <subtitle></subtitle>
+  <link href="1dom.io/feed.xml" rel="self"/>
+  <link href="1dom.io/"/>
+  
+    <updated>2021-10-27T00:00:00+00:00</updated>
+  
+  <id>1dom.io</id>
+  <author>
+    <name>1dom</name>
+    <email>dom@1dom.io</email>
+  </author>
+  
+    
+    <entry>
+      <title>Please write a blog post</title>
+      <link href="1dom.io/posts/2020-06-please-write-a-blogpost/"/>
+      <updated>2020-06-07T00:00:00+00:00</updated>
+      <id>1dom.io/posts/2020-06-please-write-a-blogpost/</id>
+      <content type="html">
+        <![CDATA[
+      <p>This is my first published personal blog post in a long time. Like I'm sure most people in and around tech have, I've threatened to do this for too long. Here's some of the hows and whys, in hope that you'll do the same, if you haven't already.</p>
+<h2>Don't get hung up on the how</h2>
+<p>I've thought about blogging a lot before. My mistake is normally focusing too much on how to do it, rather than just getting a post published. <a href="https://www.fast.ai/2020/01/16/fast_template/">fast_template</a> offered a quick and simple way. Maybe...</p>
+<p>If you're reading this, then it's because that post is sufficient to achieve the core point of a blog - get some info out there.</p>
+<h2>1 thing published is better than 0 things published</h2>
+<p>If it's not published and readable by others, it's not a blog, it's a personal diary. Realising this made me realise I have a lot of half complete personal diaries over the years.</p>
+<p>A personal diary has its place, but it has a different set of benefits to a blog. 2 Notable benefits of a published blog vs an unpublished personal diary:</p>
+<ol>
+<li><strong>External Feedback:</strong> without external feedback, you're missing out opportunities to learn and improve. Whilst there are benefits to introspection and personal diarying, if you already think 2+2 is 3, you're probably not going to tell yourself that it's actually 4. <a href="https://meta.wikimedia.org/wiki/Cunningham%27s_Law">Cunningham's Law</a> suggests that the internet will if you give it chance.</li>
+<li><strong>Informing Others</strong> Nobody else benefits directly from the writing down of knowledge in a personal diary. If just 1 person reads this post, and gets even the slightest bit of benefit, entertainment, or motivation, that means <em>multiple people</em> have received direct value from me publishing this. &quot;More than 1 person benefits&quot; seems generally more beneficial to everyone than &quot;1 person benefits&quot;.</li>
+</ol>
+<p><em>&quot;But I just need to get another couple of pages done!&quot;</em> - No you don't. 1 page published is infinitely better than 0 pages in achieving the above.</p>
+<h2>Everyone is different - you won't know until you try</h2>
+<p>I haven't had a personal blog in probably over a decade. I might be wrong, maybe it's better not to publish, maybe nobody wants to read what you or I have to think or say. A lot of people won't want to. There's possibly even 1 or more people who only have stuff to share that literally <em>nobody else on the planet</em> could get any kind of benefit from.</p>
+<p>However, those people are probably in the minority: there are a lot of broad minded folks who take many forms of benefit from many different things people have to share.</p>
+<p>The only way you will know if your content is better published or unpublished is to publish it and find out - don't trust what anyone else says on this, me included!</p>
+<h2>I want interesting things to read - it makes everything better</h2>
+<p>This is a purely selfish point, but I hope most people agree in the same selfish way. I want interesting things to read. The more people who post personal blogs about their hobbies, interests, passions and professions, the more likely I am to have something interesting to read.</p>
+<p>I want you to have more interesting things to read too, so then you're more engaged, interesting, knowledgeable, skilled and open minded when we get the pleasure of interacting. It makes my life easier.</p>
+<p>If you've not published a blog before, and you've got at least one half complete website with one pretty much finished but not published post, <em>just do it!</em></p>
+<h2>tl:dr;</h2>
+<p>I published a blog post, and I think you should too. The primary purpose and benefit of a published blog is to get info out there. That is what has the chance to make me a better and more educated person, people other than me better and more educated people, and everyone has a chance at a slightly more interesting life. Who wouldn't want those things? It's not too hard with Github Pages and fast_template.</p>
+
+    ]]>
+      </content>
+    </entry>
+  
+    
+    <entry>
+      <title>AWS CLI Tab Completion</title>
+      <link href="1dom.io/posts/2020-06-aws-autocomplete/"/>
+      <updated>2020-06-12T00:00:00+00:00</updated>
+      <id>1dom.io/posts/2020-06-aws-autocomplete/</id>
+      <content type="html">
+        <![CDATA[
+      <p>If you work with AWS, you've probably used the AWS CLI. It's a command line tool for interacting with Amazon Web Services.</p>
+<p>Despite having used AWS for years, I only recently made it down to the <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-completion.html">end of the config section of the AWS CLI docs</a> and learned that it's possible to setup tab completion:</p>
+<pre class="language-bash"><code class="language-bash">✔ ~/codeexperiments/1dom <br><span class="token number">12</span>:33 $ aws dynamodb describe-t<span class="token operator">&lt;</span>PRESSED TAB<span class="token operator">></span><br>describe-table      describe-table-replica-auto-scaling     describe-time-to-live </code></pre>
+<p>With AWS CLI v1, autocomplete only extends to service names, API actions and some parameters:</p>
+<pre class="language-bash"><code class="language-bash">✔ ~/codeexperiments/1dom <br><span class="token number">12</span>:33 $ aws dynamodb describe-table --<span class="token operator">&lt;</span>PRESSED TAB<span class="token operator">></span><br>--ca-bundle              --cli-connect-timeout    --cli-read-timeout       --endpoint-url           --no-sign-request        --profile                --table-name<br>--cli-auto-prompt        --cli-input-json         --color                  --generate-cli-skeleton  --no-verify-ssl          --query                  --version<br>--cli-binary-format      --cli-input-yaml         --debug                  --no-paginate            --output                 --region </code></pre>
+<h2>AWS CLIv2</h2>
+<p>If you haven't already, I'd highly recommend <a href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html">upgrading to AWS CLI v2</a>. You probably won't notice much difference day-to-day but it has a <a href="https://github.com/aws/aws-cli/blob/v2/CHANGELOG.rst">bunch of helpful extra little features</a>, including SSO CLI management.</p>
+<p>It also expands the autocompletion functionality to include resource names! If your AWS CLI has valid credentials, you can tab complete specific resources in the account that your credentials are configured to access:</p>
+<pre class="language-bash"><code class="language-bash">✔ ~/codeexperiments/1dom <br><span class="token number">12</span>:33 $ aws dynamodb describe-table --table-name <span class="token operator">&lt;</span>PRESSED TAB<span class="token operator">></span><br>1domio-statelock</code></pre>
+<h2>Setup</h2>
+<p>The AWS docs are pretty comprehensive on <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-completion.html#cli-command-completion-configure">how to set up autocomplete with various shells and OS.</a></p>
+<p>For my personal laptop setup (Fedora 32 &amp; bash), I was able to squash the process to a oneliner. If you're using bash, and <code>aws</code> is in your $PATH, you can probably enable autocomplete with just this:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"complete -C '<span class="token variable"><span class="token variable">$(</span><span class="token function">which</span> aws_completer<span class="token variable">)</span></span>' aws"</span> <span class="token operator">>></span> ~/.bashrc</code></pre>
+<p>If you're using something other than bash, then I'd recommend you scan through the AWS docs on setting up the CLI. The process in most cases is locate the aws_complete binary, and add a line to your shell setup that adds that binary as an autocompleter.</p>
+<h2>tl:dr;</h2>
+<p>AWS CLI has tab completion support, even down to resource names. <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-completion.html">Go read the AWS docs for instructions on setting it up,</a> or use the oneliner above if you're using bash.</p>
+
+    ]]>
+      </content>
+    </entry>
+  
+    
+    <entry>
+      <title>Switching from Jekyll to 11ty</title>
+      <link href="1dom.io/posts/2021-10-switch-to-11ty/"/>
+      <updated>2021-10-27T00:00:00+00:00</updated>
+      <id>1dom.io/posts/2021-10-switch-to-11ty/</id>
+      <content type="html">
+        <![CDATA[
+      <p>Despite talking about how and why <em>everyone else</em> should write a blog, I have clearly ignored my own advice and instead spent time switching this blog from Jekyll to <a href="https://www.11ty.dev/">11ty</a>, a JS based static site generator. It was fun to mess around with 11ty and Github actions, and it gives me something to write about.</p>
+<p><strong>NOTE</strong>: <em>I originally wrote this around Sept/Oct '21. I've been playing with eleventy internally, but only just got round to pushing and publishing Jan '22.</em></p>
+<h2>Why change from Jekyll</h2>
+<p>There's no right or wrong software to use in most cases. I feel a good piece of software shouldn't get in the way. Jekyll can get in the way by being quite slow as a result of being bloated with age. In Jekyll's defence, it was also largely my own lack of time and patience for Ruby that contributed to the change.</p>
+<p>Jekyll was nice when it worked, but I had a few different issues getting it to build with certain plugins and settings in Github actions vs my local machines, and fixing often found me Googling basic Ruby stuff.</p>
+<p>I spend my personal and professional time nerding around - I know how much I don't know, and I don't know Ruby. It's probably not hard to learn, but I just don't want to have to learn it <em>right</em> now.</p>
+<h2>Why change to 11ty</h2>
+<p>I do a lot of writing and note taking in markdown, and 11ty is also a markdown based static site generator, like Jekyll.</p>
+<p>I write a bunch of Typescript and Javascript for my day job. It's not my favourite language, but I'm more fluent in it than most other languages these days. 11ty is written in Javascript, so it all feels a lot more familiar to me. It's also a lot quicker, lighter, smaller and easier for me in general compared to Jekyll.</p>
+<p>11ty is also one of the newer static site generators, and I like shiny new thing.</p>
+<h2>For the indecisive: running Jekyll and 11ty together</h2>
+<p>Just in case I wanted to go back, I extracted my 2 - 3 posts from Jekyll into a separate folder outside the Jekyll hierarchy. I then setup <a href="https://github.com/yinkakun/eleventy-duo">eleventy-duo</a> and symlinked the posts folder in there. In github, I now also have 2 actions: one which builds Jekyll, one which builds 11ty, set to build when either CMS or posts are updated.</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">name</span><span class="token punctuation">:</span> Eleventy<br><br><span class="token key atrule">on</span><span class="token punctuation">:</span><br>  <span class="token key atrule">workflow_dispatch</span><span class="token punctuation">:</span><br>  <span class="token key atrule">push</span><span class="token punctuation">:</span><br>    <span class="token key atrule">paths</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> eleventy<span class="token important">*/**</span><br>      <span class="token punctuation">-</span> posts</code></pre>
+<p>(I also include <code>workflow_dispatch</code> in most actions so I can kick them off via github UI if needed.)</p>
+<p>I was hoping to be able to get them both working flawlessly together, I created separate Github Action workflows for Jekyll and 11ty, triggering each on changes to its own folder. However, minor differences around post handling thwarted me: I had to manually move the post dates from the filenames into the frontmatter for 11ty.</p>
+<p>It probably is possible to get 11ty to use Jekyll's post dates, or vice-versa, but I'd already decided I preferred 11ty - and it was hardly a vast anthology of posts to manually update - so there was no need to get the Jekyll side working. I might pick it up again later if I try another static site generator.</p>
+<h2>Conclusion</h2>
+<p>11ty powers this blog now. It's faster and newer than Jekyll, and a lot easier if you're familiar with JS. Ultimately, both are markdown based static site generators, so it's easy to migrate. It's probably possible to have a fully working hybrid where the same set of content markdown files power a few different static site generators to see how they compare, but that's overkill here, for the time being.</p>
+<p>I'm starting to feel like these sorts of migrations and tech stack swaps are almost a right of passage for anyone exploring static site generators - especially for a personal blog!</p>
+
+    ]]>
+      </content>
+    </entry>
+  
+</feed>

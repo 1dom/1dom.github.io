@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href=/posts/2021-10-switch-to-11ty/>
+
+    <link href="/assets/main.bd5fc45c73a835910c93.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+
+    <title>
+      Switching from Jekyll to 11ty
+      
+         | 1dom
+      
+    </title>
+
+    <link rel="icon" type= “image/x-icon” href="/images/favicon.ico">
+
+    <meta property="og:title" content="Switching from Jekyll to 11ty">
+    <meta property="og:site_name" content="1dom"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="1dom.io/posts/2021-10-switch-to-11ty/"/>
+    <meta name="twitter:card" content="summary_large_image">
+
+    
+      <meta name="twitter:creator" content="@1domio"/>
+    
+
+    
+    
+    
+      <meta name="description" content="11ty is faster, lighter and more familiar for me - I prefer it to Jekyll">
+      <meta property="og:description" content="11ty is faster, lighter and more familiar for me - I prefer it to Jekyll">
+      <meta name="description" content="11ty is faster, lighter and more familiar for me - I prefer it to Jekyll"/>
+    
+
+    
+      
+    
+    
+      <meta property="og:image" content="/images/default-social-image.png"/>
+      <meta name="twitter:image" content="/images/default-social-image.png"/>
+    
+
+    
+    
+    
+    
+  </head>
+  <body>
+    <div class="layout-wrapper">
+
+      <header class="header">
+        <div class="header__content">
+          <h1 class="site-title">
+            <a href=/>
+              1dom
+            </a>
+          </h1>
+
+          
+            <nav class="nav">
+              <ul class="nav__list">
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/about"  >About</a>
+                  </li>
+                
+              </ul>
+            </nav>
+
+          
+
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="tags">
+          
+  
+
+  <a href="/tags/AWS/" class="post-tag">#AWS</a>
+
+
+  
+
+  <a href="/tags/CLI/" class="post-tag">#CLI</a>
+
+
+  
+
+  <a href="/tags/tech/" class="post-tag">#tech</a>
+
+
+  
+
+  <a href="/tags/blog/" class="post-tag">#blog</a>
+
+
+  
+
+  <a href="/tags/motivation/" class="post-tag">#motivation</a>
+
+
+        </div>
+
+        
+<article class="post">
+  <header class="post__header">
+    <h1>Switching from Jekyll to 11ty</h1>
+    <div class="post__details">
+      <time datetime="2021-10-27">
+        27 Oct 2021
+      </time>
+      <span> | </span>
+      <span>3 min read</span>
+    </div>
+  </header>
+
+  <main class="post__content">
+    <p>Despite talking about how and why <em>everyone else</em> should write a blog, I have clearly ignored my own advice and instead spent time switching this blog from Jekyll to <a href="https://www.11ty.dev/">11ty</a>, a JS based static site generator. It was fun to mess around with 11ty and Github actions, and it gives me something to write about.</p>
+<p><strong>NOTE</strong>: <em>I originally wrote this around Sept/Oct '21. I've been playing with eleventy internally, but only just got round to pushing and publishing Jan '22.</em></p>
+<h2>Why change from Jekyll</h2>
+<p>There's no right or wrong software to use in most cases. I feel a good piece of software shouldn't get in the way. Jekyll can get in the way by being quite slow as a result of being bloated with age. In Jekyll's defence, it was also largely my own lack of time and patience for Ruby that contributed to the change.</p>
+<p>Jekyll was nice when it worked, but I had a few different issues getting it to build with certain plugins and settings in Github actions vs my local machines, and fixing often found me Googling basic Ruby stuff.</p>
+<p>I spend my personal and professional time nerding around - I know how much I don't know, and I don't know Ruby. It's probably not hard to learn, but I just don't want to have to learn it <em>right</em> now.</p>
+<h2>Why change to 11ty</h2>
+<p>I do a lot of writing and note taking in markdown, and 11ty is also a markdown based static site generator, like Jekyll.</p>
+<p>I write a bunch of Typescript and Javascript for my day job. It's not my favourite language, but I'm more fluent in it than most other languages these days. 11ty is written in Javascript, so it all feels a lot more familiar to me. It's also a lot quicker, lighter, smaller and easier for me in general compared to Jekyll.</p>
+<p>11ty is also one of the newer static site generators, and I like shiny new thing.</p>
+<h2>For the indecisive: running Jekyll and 11ty together</h2>
+<p>Just in case I wanted to go back, I extracted my 2 - 3 posts from Jekyll into a separate folder outside the Jekyll hierarchy. I then setup <a href="https://github.com/yinkakun/eleventy-duo">eleventy-duo</a> and symlinked the posts folder in there. In github, I now also have 2 actions: one which builds Jekyll, one which builds 11ty, set to build when either CMS or posts are updated.</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">name</span><span class="token punctuation">:</span> Eleventy<br><br><span class="token key atrule">on</span><span class="token punctuation">:</span><br>  <span class="token key atrule">workflow_dispatch</span><span class="token punctuation">:</span><br>  <span class="token key atrule">push</span><span class="token punctuation">:</span><br>    <span class="token key atrule">paths</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> eleventy<span class="token important">*/**</span><br>      <span class="token punctuation">-</span> posts</code></pre>
+<p>(I also include <code>workflow_dispatch</code> in most actions so I can kick them off via github UI if needed.)</p>
+<p>I was hoping to be able to get them both working flawlessly together, I created separate Github Action workflows for Jekyll and 11ty, triggering each on changes to its own folder. However, minor differences around post handling thwarted me: I had to manually move the post dates from the filenames into the frontmatter for 11ty.</p>
+<p>It probably is possible to get 11ty to use Jekyll's post dates, or vice-versa, but I'd already decided I preferred 11ty - and it was hardly a vast anthology of posts to manually update - so there was no need to get the Jekyll side working. I might pick it up again later if I try another static site generator.</p>
+<h2>Conclusion</h2>
+<p>11ty powers this blog now. It's faster and newer than Jekyll, and a lot easier if you're familiar with JS. Ultimately, both are markdown based static site generators, so it's easy to migrate. It's probably possible to have a fully working hybrid where the same set of content markdown files power a few different static site generators to see how they compare, but that's overkill here, for the time being.</p>
+<p>I'm starting to feel like these sorts of migrations and tech stack swaps are almost a right of passage for anyone exploring static site generators - especially for a personal blog!</p>
+
+  </main>
+
+  <aside class="post__aside">
+    <div class="post__tags">
+      
+        
+        <a href="/tags/blog/">#blog</a>
+      
+        
+        <a href="/tags/tech/">#tech</a>
+      
+    </div>
+
+    <nav class="post__pagination">
+
+        <a href="/posts/2020-06-aws-autocomplete/">
+          <span>AWS CLI Tab Completion</span>
+          <span>→</span>
+        </a>
+
+      
+    </nav>
+  </aside>
+
+</article>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+
+          <ul class="hero__social-links">
+            
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://github.com/1dom/1dom.github.io" target="_blank" rel="noopener noreferrer" >GitHub</a>
+                </li>
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://twitter.com/1domio" target="_blank" rel="noopener noreferrer" >Twitter</a>
+                </li>
+              
+            
+
+            
+
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="/feed.xml" target="_blank" rel="noopener noreferrer" >RSS</a>
+                </li>
+              
+            
+          </ul>
+
+          
+            <p class="footer__attribution">
+            Powered by <a href="https://www.11ty.dev" target="_blank" rel="noopener">11ty</a> based on <a href="https://github.com/yinkakun/eleventy-duo" target="_blank" rel="noopener noreferrer">eleventy-duo</a> 
+            </p>
+          
+
+        </div>
+      </div>
+
+    </footer>
+
+    <script src="/assets/main.31d6cfe0d16ae931b73c.js"></script>
+  </body>
+</html>
