@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href=/posts/2022-02-ulauncher/>
+
+    <link href="/assets/main.5092227d423c86dfa606.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+
+    <title>
+      Ulauncher speeds up my computer usage
+      
+         | 1dom
+      
+    </title>
+
+    <link rel="icon" type= “image/x-icon” href="/images/favicon.ico">
+
+    <meta property="og:title" content="Ulauncher speeds up my computer usage">
+    <meta property="og:site_name" content="1dom"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="1dom.io/posts/2022-02-ulauncher/"/>
+    <meta name="twitter:card" content="summary_large_image">
+
+    
+      <meta name="twitter:creator" content="@1domio"/>
+    
+
+    
+    
+    
+      <meta name="description" content="vscode projects, browser tabs, search shortcuts and more via ctrl+space">
+      <meta property="og:description" content="vscode projects, browser tabs, search shortcuts and more via ctrl+space">
+      <meta name="description" content="vscode projects, browser tabs, search shortcuts and more via ctrl+space"/>
+    
+
+    
+      
+    
+    
+      <meta property="og:image" content="/images/default-social-image.png"/>
+      <meta name="twitter:image" content="/images/default-social-image.png"/>
+    
+
+    
+    
+    
+    
+  </head>
+  <body>
+    <div class="layout-wrapper">
+
+      <header class="header">
+        <div class="header__content">
+          <h1 class="site-title">
+            <a href=/>
+              1dom
+            </a>
+          </h1>
+
+          
+            <nav class="nav">
+              <ul class="nav__list">
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/about"  >About</a>
+                  </li>
+                
+              </ul>
+            </nav>
+
+          
+
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="tags">
+          
+  
+
+  <a href="/tags/AWS/" class="post-tag">#AWS</a>
+
+
+  
+
+  <a href="/tags/CLI/" class="post-tag">#CLI</a>
+
+
+  
+
+  <a href="/tags/tech/" class="post-tag">#tech</a>
+
+
+  
+
+  <a href="/tags/blog/" class="post-tag">#blog</a>
+
+
+  
+
+  <a href="/tags/motivation/" class="post-tag">#motivation</a>
+
+
+  
+
+  <a href="/tags/selfhosting/" class="post-tag">#selfhosting</a>
+
+
+  
+
+  <a href="/tags/degoogle/" class="post-tag">#degoogle</a>
+
+
+  
+
+  <a href="/tags/productivity/" class="post-tag">#productivity</a>
+
+
+  
+
+  <a href="/tags/software/" class="post-tag">#software</a>
+
+
+        </div>
+
+        
+<article class="post">
+  <header class="post__header">
+    <h1>Ulauncher speeds up my computer usage</h1>
+    <div class="post__details">
+      <time datetime="2022-02-12">
+        12 Feb 2022
+      </time>
+      <span> | </span>
+      <span>3 min read</span>
+    </div>
+  </header>
+
+  <main class="post__content">
+    <p><a href="https://ulauncher.io/">Ulauncher</a> is great - it's an app launcher for linux. When I press <code>Ctrl + Space</code> it opens a search bar, with some suggestions. Typing a few letter pops suggestions that, when selected, trigger different actions and shortcuts. It was created around 2014 and still appears to be under active development. Here are some things I like about it, along with a summary of the extensions I use and their quirks.</p>
+<p><img src="/images/ulauncher-demo.gif" alt="Ulauncher demo from ulauncher.io"></p>
+<h2>Reduce navigation and lost time</h2>
+<p>It's really helpful for quickly switching between things. In particular, I have a huge amount of browser tabs open all the time, and often several vscode windows and other mess. If I type e.g. <code>vs</code>, a list of all my recent vscode projects appear,<code>1d</code> is enough to search and pop the source for the project &amp; file in vscode where I'm writing this. Then <code>bt</code> lists all my current browser tabs, and <code>loc</code> will search and pop an existing browser tab with  <code>localhost:8080..</code> which has dev/preview of the page I'm writing.</p>
+<p>In the before times, I would normally click through a bunch of browser and vscode windows at each step, getting sidetracked along the way.</p>
+<p>I've been using Ulauncher for a few weeks now and I think I'm spending less time looking for things and getting lost. I even find myself using Ulauncher instead of native app shortcuts like command palettes or <code>Ctrl/Alt + </code> combinations, because it will popup anywhere I press <code>Ctrl + Space</code>. The suggestions also mean I don't have to blindly learn complex combinations.</p>
+<h2>Extensions are plentiful but that's a blessing and a curse.</h2>
+<p>For Ulauncher, extensions are easy to write, install and use. There's even a <a href="https://ext.ulauncher.io/">convenient catalogue</a>. Extensions are installed by pasting the github URL into Ulauncher</p>
+<p>Being both easy to develop for, under active development and being more than a few years old has created some maintenance and backwards compatibility issues with some extensions. This forced me to hunt down fixed forks for abandoned extensions, but also made it easy for me to contribute my own improvements to others.</p>
+<h2>My most regularly used extensions</h2>
+<p>In very approximate usage order:</p>
+<ul>
+<li><strong><a href="https://github.com/mikebarkmin/ulauncher-obsidian">obsidianmd</a>:</strong> adds <code>on</code> to search notes and <code>od</code> to launch daily note. NOTE: daily note file/folder path are pulled from the periodic notes plugin if enabled, even if the daily note in there is disabled.</li>
+<li><strong><a href="https://github.com/brpaz/ulauncher-brotab">ulauncher-brotab extension</a>:</strong> <code>bt</code> to switch browser tabs. I started writing this myself, but found someone beat me to it, so I raised a <a href="https://github.com/brpaz/ulauncher-brotab/pull/13">PR</a> with some tweaks. You can install from <a href="https://github.com/1dom/ulauncher-brotab">my repo</a> if this PR still isn't merged.</li>
+<li><strong><a href="https://github.com/brpaz/ulauncher-vscode-projects">vscode-projects</a></strong>: adds <code>vs</code> for opening vscode projects. I had to install <code>project manager</code> vscode plugin too.</li>
+<li><strong><a href="https://github.com/souhaiebtar/ulauncher-windows-switcher">window-switcher</a>:</strong> adds <code>ws</code> to switch windows. Note, this is a fork of the <a href="https://ext.ulauncher.io/-/github-beajeanm-ulauncher-windows-switcher">one listed on the extension store</a> which has been abandoned.</li>
+<li><strong><a href="https://github.com/pywkm/ulauncher-spotify">spotify-player</a>:</strong> <code>sp</code> for play/pause/skip spotify. This is less popular and just does play/pause/skip/current track compred to the spotify-api extension. However, this extension stays local and doesn't require any spotify auth.</li>
+<li><strong><a href="https://github.com/noam09/ulauncher-maim">maim</a> :</strong> adds <code>ss</code> for screenshots</li>
+<li><strong><a href="https://github.com/kuenzelit/ulauncher-firefox-bookmarks">firefox-bookmarks</a>:</strong> adds <code>f</code> to search/launch firefox bookmark</li>
+<li><strong><a href="https://github.com/friday/ulauncher-clipboard">clipboard</a>:</strong> adds <code>c</code> for clipboard history. I've not got into the habit of using this one yet, but it feels like it should be useful.</li>
+</ul>
+<p>I've also added at least 1 extra shortcut:</p>
+<ul>
+<li><strong><a href="https://www.duckduckgo.com/">DuckDuckGo</a></strong>: <code>d</code> followed by search term, passed to: <code>https://duckduckgo.com/?q=%s&amp;kp=-2&amp;kl=uk-en</code>. Search params are from <a href="https://duckduckgo.com/params">DuckDuckGo URL Parameters docs</a></li>
+</ul>
+<p>I'd like to also add in the future:</p>
+<ul>
+<li>something for changing my monitor arrangements for docker, undocked and VR</li>
+<li>focusing active video conferencing browser tab</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Ulauncher is really helpful, being able to jump straight to where I want to be from anywhere else reduces cognitive load and opportunities for distraction and forgetfulness on a computer. The real power comes from it's super intuitive extensions, although be prepared to have to sometimes think a little to get some of them working due to lack of extension maintenance or ongoing Ulauncher development.</p>
+
+  </main>
+
+  <aside class="post__aside">
+    <div class="post__tags">
+      
+        
+        <a href="/tags/tech/">#tech</a>
+      
+        
+        <a href="/tags/productivity/">#productivity</a>
+      
+        
+        <a href="/tags/software/">#software</a>
+      
+    </div>
+
+    <nav class="post__pagination">
+
+        <a href="/posts/2022-02-google-domain-apps-going/">
+          <span>Free legacy Google Domain Apps is going away. Degoogle, selfhost more.</span>
+          <span>→</span>
+        </a>
+
+      
+    </nav>
+  </aside>
+
+</article>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+
+          <ul class="hero__social-links">
+            
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://github.com/1dom/1dom.github.io" target="_blank" rel="noopener noreferrer" >GitHub</a>
+                </li>
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://twitter.com/1domio" target="_blank" rel="noopener noreferrer" >Twitter</a>
+                </li>
+              
+            
+
+            
+
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="/feed.xml" target="_blank" rel="noopener noreferrer" >RSS</a>
+                </li>
+              
+            
+          </ul>
+
+          
+            <p class="footer__attribution">
+            Powered by <a href="https://www.11ty.dev" target="_blank" rel="noopener">11ty</a> based on <a href="https://github.com/yinkakun/eleventy-duo" target="_blank" rel="noopener noreferrer">eleventy-duo</a> 
+            </p>
+          
+
+        </div>
+      </div>
+
+    </footer>
+
+    <script src="/assets/main.31d6cfe0d16ae931b73c.js"></script>
+  </body>
+</html>
