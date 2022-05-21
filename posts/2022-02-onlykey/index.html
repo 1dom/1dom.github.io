@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href=/posts/2022-02-onlykey/>
+
+    <link href="/assets/main.dc286c68490b4a84c2a2.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+
+    <title>
+      OnlyKey is like a YubiKey, but more versatile.
+      
+         | 1dom
+      
+    </title>
+
+    <link rel="icon" type= “image/x-icon” href="/images/favicon.ico">
+
+    <meta property="og:title" content="OnlyKey is like a YubiKey, but more versatile.">
+    <meta property="og:site_name" content="1dom"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="1dom.io/posts/2022-02-onlykey/"/>
+    <meta name="twitter:card" content="summary_large_image">
+
+    
+      <meta name="twitter:creator" content="@1domio"/>
+    
+
+    
+    
+    
+      <meta name="description" content="I got an OnlyKey, I use it so much more than my YubiKeys">
+      <meta property="og:description" content="I got an OnlyKey, I use it so much more than my YubiKeys">
+      <meta name="description" content="I got an OnlyKey, I use it so much more than my YubiKeys"/>
+    
+
+    
+      
+    
+    
+      <meta property="og:image" content="/images/default-social-image.png"/>
+      <meta name="twitter:image" content="/images/default-social-image.png"/>
+    
+
+    
+    
+    
+    
+  </head>
+  <body>
+    <div class="layout-wrapper">
+
+      <header class="header">
+        <div class="header__content">
+          <h1 class="site-title">
+            <a href=/>
+              1dom
+            </a>
+          </h1>
+
+          
+            <nav class="nav">
+              <ul class="nav__list">
+                
+                  
+                  
+
+                  
+
+                  
+
+                  <li class="nav-item">
+                    <a href="/about"  >About</a>
+                  </li>
+                
+              </ul>
+            </nav>
+
+          
+
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="tags">
+          
+  
+
+  <a href="/tags/tech/" class="post-tag">#tech</a>
+
+
+  
+
+  <a href="/tags/blog/" class="post-tag">#blog</a>
+
+
+  
+
+  <a href="/tags/AWS/" class="post-tag">#AWS</a>
+
+
+  
+
+  <a href="/tags/CLI/" class="post-tag">#CLI</a>
+
+
+  
+
+  <a href="/tags/motivation/" class="post-tag">#motivation</a>
+
+
+  
+
+  <a href="/tags/selfhosting/" class="post-tag">#selfhosting</a>
+
+
+  
+
+  <a href="/tags/degoogle/" class="post-tag">#degoogle</a>
+
+
+  
+
+  <a href="/tags/security/" class="post-tag">#security</a>
+
+
+  
+
+  <a href="/tags/hardware/" class="post-tag">#hardware</a>
+
+
+  
+
+  <a href="/tags/productivity/" class="post-tag">#productivity</a>
+
+
+  
+
+  <a href="/tags/software/" class="post-tag">#software</a>
+
+
+        </div>
+
+        
+<article class="post">
+  <header class="post__header">
+    <h1>OnlyKey is like a YubiKey, but more versatile.</h1>
+    <div class="post__details">
+      <time datetime="2022-05-21">
+        21 May 2022
+      </time>
+      <span> | </span>
+      <span>12 min read</span>
+    </div>
+  </header>
+
+  <main class="post__content">
+    <p>The most widely known security key is probably the YubiKey. I've had a YubiKey 5c and YubiKey Nano for several (4+) years now, and have had an OnlyKey for around a year. YubiKeys are useful and convenient for OTP codes, and also FIDO/U2F, but having only 1 button is a big limiting factor.</p>
+<p>The OnlyKey feels a lot more versatile. Here are some thoughts on what's good and bad about the YubiKey and the OnlyKey, and why I much prefer and recommend an OnlyKey instead for most.</p>
+<p><picture><source type="image/avif" srcset="/img/yV5oMflwaV-1578.avif 1578w" sizes=""><img alt="YubiKey nano, OnlyKey, YubiKey 5c" loading="lazy" decoding="async" src="/img/yV5oMflwaV-1578.jpeg" width="1578" height="1123"></picture></p>
+<p><em>I intended this post to be a short post with just enough info to remind myself how and why I use the OnlyKey, but I got a little carried away (more on that later...), and it ended up long enough to justify setting up <a href="https://www.npmjs.com/package/markdown-it-table-of-contents">markdown-it-table-of-contents</a> which also lead to <a href="https://www.npmjs.com/package/markdown-it-anchor">markdown-it-anchor</a>. Enjoy!</em></p>
+<p><div class="table-of-contents"><h2>Contents</h2><ul><li><a href="#yubikeys-are-okay">YubiKeys are okay </a><ul><li><a href="#yubikey-for-otp-works-reasonably-well%2C-even-on-android-in-places">YubiKey for OTP works reasonably well, even on Android in places </a></li><li><a href="#yubikey-and-gpg-enables-a-lot-but-is-lots-of-moving-parts.">YubiKey and GPG enables a lot but is lots of moving parts. </a></li></ul></li><li><a href="#onlykey-regular-features-and-usage">OnlyKey regular features and usage </a><ul><li><a href="#its-glorious-buttons">Its glorious buttons </a></li><li><a href="#6-buttons%3A-2-profiles-%26-self-destruct">6 buttons: 2 profiles &amp; self-destruct </a></li><li><a href="#2-actions-per-button%2C-per-profile.-passwords%2C-otp%2C-key-combinations-etc.">2 actions per button, per profile. Passwords, OTP, key combinations etc. </a></li><li><a href="#only-set-password-entry-on-long-button-presses%2C-and-probably-avoid-automating-submit.">Only set password entry on long button presses, and probably avoid automating submit. </a></li><li><a href="#key-layout%3A-otp-short-press%2C-password-long-press%2C-profile-e-mail-at-the-end.">Key layout: OTP short press, password long press, profile e-mail at the end. </a></li><li><a href="#ssh-setup-is-super-easy%2C-using-trezor's-agent">SSH setup is super easy, using Trezor's agent </a><ul><li><a href="#some-handy-aliases">Some handy aliases </a></li><li><a href="#a-quick-poke-around-the-implementation---accessible%2C-but-a-bit-rough">A quick poke around the implementation - accessible, but a bit rough </a></li></ul></li></ul></li><li><a href="#other-useful-onlykey-features">Other useful OnlyKey features </a><ul><li><a href="#onlykey-challenge-codes---necessary-evil.">OnlyKey challenge codes - necessary evil. </a></li><li><a href="#backing-up-a-security-key-isn't-always-possible-or-a-great-idea">Backing up a security key isn't always possible or a great idea </a><ul><li><a href="#but-onlykey-does-it-in-quite-a-cool-way">But OnlyKey does it in quite a cool way </a></li></ul></li><li><a href="#hold-2-for-a-reminder-of-button-functions">Hold 2 for a reminder of button functions </a></li></ul></li><li><a href="#is-onlykey-a-good-idea%3F">Is OnlyKey a good idea? </a><ul><li><a href="#not-a-full-replacement-for-a-password-manager">Not a full replacement for a password manager </a></li><li><a href="#less-popular-and-less-oversight-than-yubikey">Less popular and less oversight than YubiKey </a></li><li><a href="#rough%2C-but-opensource-and-actively-developed-code">Rough, but opensource and actively developed code </a></li><li><a href="#is-it-secure%3F-relatively%2C-for-the-right-people%2C-like-me%2C-i-think">Is it secure? Relatively, for the right people, like me, I think </a></li></ul></li><li><a href="#what-do-others-think-of-the-onlykey%3F">What do others think of the OnlyKey? </a><ul><li><a href="#the-onlykey-implementation-is-definitely-messy-and-controversial">The OnlyKey implementation is definitely messy and controversial </a></li><li><a href="#the-creators-aren't-perfect%2C-but-clearly-know-some-stuff">The creators aren't perfect, but clearly know some stuff </a></li><li><a href="#as-much-as-i-like-the-user-experience%2C-others-don't">As much as I like the user experience, others don't </a></li></ul></li><li><a href="#conclusion">Conclusion </a></li></ul></div></p>
+<h2 id="yubikeys-are-okay" tabindex="-1">YubiKeys are okay <a class="header-anchor" href="#yubikeys-are-okay"></a></h2>
+<p>They're smaller and with fewer features than the OnlyKey, but probably hold the <em>&quot;nobody ever got fired for buying IBM&quot;</em> status amongst security keys.</p>
+<h3 id="yubikey-for-otp-works-reasonably-well%2C-even-on-android-in-places" tabindex="-1">YubiKey for OTP works reasonably well, even on Android in places <a class="header-anchor" href="#yubikey-for-otp-works-reasonably-well%2C-even-on-android-in-places"></a></h3>
+<p>Adding YubiKey as OTP device works really well in most cases. E.g. adding YubiKey as a second factor on an AWS account just requires to you press the button in the console saying you want it, and then press the button on the YubiKey when prompted, and you're done.</p>
+<p>I also added YubiKey as a second factor to my preferred password manager, KeepassXC, as that supports mobile devices. With the 5c, I was able to plug it into my phone's usb, and unlock KeepassXC on Android. I even designed and 3D printed a small watch strap mount for my 5C for easier access! (<a href="/static/yubikey_5c_watchstrap_holder.scad">OpenSCAD</a> or blender-rounded <a href="/static/yubikey_5c_watchstrap_holder.3mf">3MF file</a>, if you're interested.)</p>
+<h3 id="yubikey-and-gpg-enables-a-lot-but-is-lots-of-moving-parts." tabindex="-1">YubiKey and GPG enables a lot but is lots of moving parts. <a class="header-anchor" href="#yubikey-and-gpg-enables-a-lot-but-is-lots-of-moving-parts."></a></h3>
+<p>I ended up leaning a lot on GPG to get the functionality I wanted from the YubiKey, but that lead to a lot of moving parts. You need to have GPG all setup, generate keys on your device, setup smartcard mode, configure your SSH agent, ensure the appropriate daemons are running etc.</p>
+<p>Even with some <a href="https://github.com/drduh/YubiKey-Guide">very comprehensive documentation</a>, some things just felt janky:</p>
+<ul>
+<li>Ensuring the GPG agent was up and running correctly was challenging, and I'd often have to run some extra steps when I used my YubiKey to get it working.</li>
+<li>Using GPG for SSH, on different flavours and configs of linux, particularly with multiple terminal open across multiple apps, it was 50/50 as to if the PIN prompt would come through on the active TTY.</li>
+<li>The number of slots on the YubiKey was finite in a lot of cases, so at the time, only 1 GPG identity was conveniently supported.</li>
+<li>Using GPG effectively allowed me to avoid having to directly use <code>ykman</code>, the yubikey manager.</li>
+</ul>
+<p>Ultimately, the YubiKey felt like just an OTP/authenticator type device. I wanted a convenient and versatile security key.</p>
+<h2 id="onlykey-regular-features-and-usage" tabindex="-1">OnlyKey regular features and usage <a class="header-anchor" href="#onlykey-regular-features-and-usage"></a></h2>
+<h3 id="its-glorious-buttons" tabindex="-1">Its glorious buttons <a class="header-anchor" href="#its-glorious-buttons"></a></h3>
+<p>Immediately, you can understand why this device is more versatile. The keypad. It offers an obvious solution to the TTY pin problem I had with the YubiKey:</p>
+<p><picture><source type="image/avif" srcset="/img/sTA-Ct0XwX-200.avif 200w" sizes="200"><img alt="OnlyKey" loading="lazy" decoding="async" src="/img/sTA-Ct0XwX-200.jpeg" width="200" height="323"></picture></p>
+<p>The buttons are similar to the YubiKey's capacitive touch, this means no moving parts. The rubber case that comes with the OnlyKey has button holes that guide your finger tips to the right place. If anything, the buttons are almost too easy to press, but do need to be pressed by something conductive, like a human.</p>
+<h3 id="6-buttons%3A-2-profiles-%26-self-destruct" tabindex="-1">6 buttons: 2 profiles &amp; self-destruct <a class="header-anchor" href="#6-buttons%3A-2-profiles-%26-self-destruct"></a></h3>
+<p>Once setup, to use the OnlyKey, you plug the device in and enter a pin code. There are 3 possible configurable pins:</p>
+<ul>
+<li>2 pins for 2 different profiles</li>
+<li>1 self destruct</li>
+</ul>
+<p>Putting in a profile pin unlocks the key and turns on a different colour light to indicate the profile. That profile is a completely separate and unique set of keys, passwords and configuration.</p>
+<p>This is super helpful: 1 profile for work, 1 profile for personal, determined by the pin you initially enter to unlock the device.</p>
+<p>Enter an incorrect pin 10 times, or enter the self destruct pin, and the OnlyKey wipes itself. Without the self-destruct, a 6 digit keypad would be feasible to brute force any convenient length value.</p>
+<h3 id="2-actions-per-button%2C-per-profile.-passwords%2C-otp%2C-key-combinations-etc." tabindex="-1">2 actions per button, per profile. Passwords, OTP, key combinations etc. <a class="header-anchor" href="#2-actions-per-button%2C-per-profile.-passwords%2C-otp%2C-key-combinations-etc."></a></h3>
+<p><picture><source type="image/avif" srcset="/img/tp3LxC530Z-1007.avif 1007w" sizes=""><img alt="OnlyKey app homescreen showing 1 profile" loading="lazy" decoding="async" src="/img/tp3LxC530Z-1007.jpeg" width="1007" height="660"></picture></p>
+<p>When the OnlyKey is unlocked, pressing any of the individual buttons briefly will trigger an action, which can be customised in the desktop app. Holding a button for 1.5s will trigger a different action.</p>
+<p>These actions can be different authenticator OTP codes, or keying in different passwords, or even key combinations for common shortcuts.</p>
+<h3 id="only-set-password-entry-on-long-button-presses%2C-and-probably-avoid-automating-submit." tabindex="-1">Only set password entry on long button presses, and probably avoid automating submit. <a class="header-anchor" href="#only-set-password-entry-on-long-button-presses%2C-and-probably-avoid-automating-submit."></a></h3>
+<p>Key entry configuration can do complex stuff. I was able to setup a spare Google account login to happen, including entering the username, pressing return, entering a password, waiting a few short seconds, then entering a 6 digit authenticator OTP code, and pressing return.</p>
+<p><picture><source type="image/avif" srcset="/img/XI4t62rtqm-952.avif 952w" sizes=""><img alt="OnlyKey app slot configuration screen" loading="lazy" decoding="async" src="/img/XI4t62rtqm-952.jpeg" width="952" height="674"></picture></p>
+<p>Although it was satisfying to know I could do this, it was a bad idea. Accidentally pressing the button anywhere else apart from the username field on a Google login page was... chaotic. It would definitely, eventually, lead to accidentally typing out a username and password and sending it in a Slack channel or Teams chat or similar.</p>
+<h3 id="key-layout%3A-otp-short-press%2C-password-long-press%2C-profile-e-mail-at-the-end." tabindex="-1">Key layout: OTP short press, password long press, profile e-mail at the end. <a class="header-anchor" href="#key-layout%3A-otp-short-press%2C-password-long-press%2C-profile-e-mail-at-the-end."></a></h3>
+<ul>
+<li>1 - short press: password manager OTP</li>
+<li>1 - long press: password manager extra long complex password</li>
+<li>2 - short press: IDP 1 OTP</li>
+<li>2 - long press: IDP 1 extra long complex password</li>
+<li>3 - short press: some other service OTP</li>
+<li>3 - long press: some other service extra long complex password</li>
+<li>6 - short press: profile e-mail</li>
+</ul>
+<p>I use a variation of this setup. Each number corresponds to a service, with the e-mail often being the username for these services. Pressing 6 will type my e-mail anywhere.  Having OTP on short press also means most accidental presses - at worst - dump a random number, rather than a secret.</p>
+<h3 id="ssh-setup-is-super-easy%2C-using-trezor's-agent" tabindex="-1">SSH setup is super easy, using Trezor's agent <a class="header-anchor" href="#ssh-setup-is-super-easy%2C-using-trezor's-agent"></a></h3>
+<p>This is probably one of my favourite features of the OnlyKey. It uses <a href="https://thoughts.t37.net/a-step-by-step-guide-to-securing-your-ssh-keys-with-the-ledger-nano-s-92e58c64a005">libagent</a>, the same approach as the <a href="https://blog.trezor.io/trezor-firmware-1-3-4-enables-ssh-login-86a622d7e609">Trezor security key SSH agent</a> and also supports the <a href="https://thoughts.t37.net/a-step-by-step-guide-to-securing-your-ssh-keys-with-the-ledger-nano-s-92e58c64a005">Ledger Nano S</a> hardware wallet.</p>
+<p>To onboard a new service, generate the <code>authorized_keys</code> entry with <code>onlykey-agent</code>:</p>
+<pre class="language-bash"><code class="language-bash">$ onlykey-agent username@host<br>ssh-ed25519 ASAAC3NzaC1lPOTATOIDwqxTbTLthb0MSgGeSXZEUEOHZwxJ/M7EJfXPt7Z8iM <span class="token operator">&lt;</span>ssh://username@host<span class="token operator">|</span>ed2551<span class="token operator"><span class="token file-descriptor important">9</span>></span></code></pre>
+<p>The username@host part is used as a seed to derive a unique pair from a single private key on the device. This is a really satisfying solution to being able to the problem of only being able to store a finite set of unique identities.</p>
+<p>Then to use that with something that uses SSH:</p>
+<pre class="language-bash"><code class="language-bash">$ onlykey-agent username@host -- <span class="token function">git</span> pull</code></pre>
+<h4 id="some-handy-aliases" tabindex="-1">Some handy aliases <a class="header-anchor" href="#some-handy-aliases"></a></h4>
+<p>2 terminal aliases help here too, 1 for the git command itself, and one for other commands that might depend on git creds, such as installing packages from private repos:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">alias</span> <span class="token assign-left variable">okgit</span><span class="token operator">=</span><span class="token string">"onlykey-agent myusername@github.com -- git"</span><br><span class="token builtin class-name">alias</span> <span class="token assign-left variable">okg</span><span class="token operator">=</span><span class="token string">"onlykey-agent myusername@github.com --"</span><br>okgit pull<br>okg <span class="token function">yarn</span> <span class="token function">install</span> </code></pre>
+<h4 id="a-quick-poke-around-the-implementation---accessible%2C-but-a-bit-rough" tabindex="-1">A quick poke around the implementation - accessible, but a bit rough <a class="header-anchor" href="#a-quick-poke-around-the-implementation---accessible%2C-but-a-bit-rough"></a></h4>
+<p>SSH with OnlyKey really is almost too convenient. I assumed this did some pure bash funky subshell stuff, overriding some magical <code>SSH_*</code> env vars I wasn't aware of to set a default identity. Poking through the source for <code>onlykey-agent</code> though, I was wrong. It's basically all Python, and implements <a href="https://github.com/romanz/trezor-agent/blob/e4d16a361aaeb15ff3f7bc5d9d0b891eb87b2dbe/libagent/ssh/protocol.py">its own SSH client</a>, with each supported hardware device defining <a href="https://github.com/romanz/trezor-agent/blob/e4d16a361aaeb15ff3f7bc5d9d0b891eb87b2dbe/libagent/device/onlykey.py">its own interface to its cryptographic functions</a> for that SSH client to use.</p>
+<p>When you invoke <code>onlykey-agent</code>, it <a href="https://github.com/romanz/trezor-agent/blob/e4d16a361aaeb15ff3f7bc5d9d0b891eb87b2dbe/libagent/ssh/__init__.py">grabs all your parameters</a>. Based on those, it then gathers everything else required. It then create the SSH client connection using the implementation above. When using it with single commands, any parameters after <code>--</code> are passed to the SSH client to run. If creating an interactive shell with <code>-s</code>, <a href="https://github.com/romanz/trezor-agent/blob/e4d16a361aaeb15ff3f7bc5d9d0b891eb87b2dbe/libagent/ssh/__init__.py">it grabs <code>SHELL</code> env var and uses that as the command to run your standard terminal experience.</a></p>
+<p>It's not the most beautiful or cared for Python code in the world, but it gets the job done. <a href="https://dev.to/mpixel/deconstructing-onlykey-agent-401l">Someone who seems far smarter and did a far more thorough anlysis of this agrees</a>.</p>
+<h2 id="other-useful-onlykey-features" tabindex="-1">Other useful OnlyKey features <a class="header-anchor" href="#other-useful-onlykey-features"></a></h2>
+<h3 id="onlykey-challenge-codes---necessary-evil." tabindex="-1">OnlyKey challenge codes - necessary evil. <a class="header-anchor" href="#onlykey-challenge-codes---necessary-evil."></a></h3>
+<p>Some OnlyKey functions have a challenge code. This means you will be prompted to enter some digits on the OnlyKey itself when you use onlykey-agent. You can turn this off, but I leave it on. The purpose is to ensure functions can't be done without physically having access to the key. If this is disabled, anyone one who has compromised the computer over the internet could use the key, meaning the unique physical factor to the authentication is lost.</p>
+<p>The challenge code is implemented <a href="https://github.com/romanz/trezor-agent/blob/e4d16a361aaeb15ff3f7bc5d9d0b891eb87b2dbe/libagent/device/onlykey.py">largely in the OnlyKey specifics part of libargent</a> and I haven't really experienced the same TTY issues I had with GPG agent pin entry setup for the YubiKey. The YubiKey issue was exacerbated by also needing to provide input to the TTY, but with OnlyKey, the input is done via the buttons on the key itself.</p>
+<p>It can be a little inconvenient having to enter a bunch of codes for each private dependency on larger projects still, but it can be disabled in the onlykey-app.</p>
+<h3 id="backing-up-a-security-key-isn't-always-possible-or-a-great-idea" tabindex="-1">Backing up a security key isn't always possible or a great idea <a class="header-anchor" href="#backing-up-a-security-key-isn't-always-possible-or-a-great-idea"></a></h3>
+<p>Creating backups for security keys can be an awkward topic. A truly secure hardware key will have some unique special configuration that exists only on that device's hardware and cannot be extracted. Even if your computer is riddled with malware, OTP and signatures from a secure USB security key should still be relatively safe as the malware can't get to the secrets in the hardware device. But if you <em>can</em> backup that unique special configuration, then someone can get to that backup remotely, they could load that backup onto a blank key and all of a sudden you're compromised.</p>
+<p>Even if they can't get to the backup, if they can remotely access your machine with the key connected, and initiate a backup of the key from the computer, you're going to have an equally bad time.</p>
+<h4 id="but-onlykey-does-it-in-quite-a-cool-way" tabindex="-1">But OnlyKey does it in quite a cool way <a class="header-anchor" href="#but-onlykey-does-it-in-quite-a-cool-way"></a></h4>
+<p>With OnlyKey, unlock the key with a profile pin, and then hold down the 1 key for 5+ seconds, and it will type out its own backup of that profile:</p>
+<pre><code>-----BEGIN ONLYKEY BACKUP-----
+CbE3xf0RXmX5eajdD1LSqlZ1c1gn2JqMO8Psqy2/eT15T+kmhR1pmqHW/7jnW//Um1+K0j4Y/4jZ
+...7 lines removed for brevity &amp; paranoia...
+s1z9dz+z2swrJs4tyk+i8SkV3mkOAV5HEEijrUkfRCR247vGIYLvcqWde5um/49NregP+pQ7w1H0
+PfQIveqIyqPnI/szmjqVx97XmfESCJTlf4JLRDNl
+--FXsW/gSy55Gneb+Soau0PoF1Eu5Q6M/shRxCiZJeIiw=
+-----END ONLYKEY BACKUP-----
+</code></pre>
+<p>Restoring can be done by setting an OnlyKey with the same backup pin, and then using the onlykey-app. Backups are per profile.</p>
+<p>If you want a super-safe setup, you shouldn't be really be able to even take a backup of a security key, but then if you lose the key, you're equally up the creek. <a href="https://www.yubico.com/blog/backup-recovery-plan/">Yubico's answer to backups is also vague on specifics</a>.</p>
+<p>For my own personal use though, I assess the risk and convenience of this type of backup mechanism and approach to be significantly more appealing than the risk and convenience of not being able to backup a key, and having to have 2 actively setup keys in existence.</p>
+<h3 id="hold-2-for-a-reminder-of-button-functions" tabindex="-1">Hold 2 for a reminder of button functions <a class="header-anchor" href="#hold-2-for-a-reminder-of-button-functions"></a></h3>
+<p>When configuring the OnlyKey, you can label each slot. Unlocking the key and then holding down the 2 key will type out all the slots and labels as a reminder of how the profile is configured. This works even without the app. E.g. the output for the key layout suggestions above would be:</p>
+<pre><code>1a passmanager OTP
+2a idp OTP
+3a someother OTP
+4a 
+5a 
+6a email
+1b passmanager pass
+2b idp pass
+3b someother pass
+4b 
+5b 
+6b 
+For OnlyKey on-the-go visit https://apps.crp.to
+</code></pre>
+<p>One thing I did notice when putting this together though, is that you have to hold the 2 key for 5 seconds to get this output. On a couple of occasions, I didn't hold for long enough and dumped <code>idp pass</code> password.</p>
+<p>I haven't really used this functionality, but I still think it's cool it exists and can be used without any setup using keyboard input.</p>
+<h2 id="is-onlykey-a-good-idea%3F" tabindex="-1">Is OnlyKey a good idea? <a class="header-anchor" href="#is-onlykey-a-good-idea%3F"></a></h2>
+<p>On the whole, I think so, yes - but it's not perfect.</p>
+<h3 id="not-a-full-replacement-for-a-password-manager" tabindex="-1">Not a full replacement for a password manager <a class="header-anchor" href="#not-a-full-replacement-for-a-password-manager"></a></h3>
+<p>There are not enough slots for lots of passwords, but a desktop password manager also is more convenient in most cases. Most of my computer usage is at my home desk, with my OnlyKey within arms reach plugged into my dock. Accessing the OnlyKey is convenient but still requires me to relinquish control of a mouse or keyboard. Password managers can have an awareness of what's being logged into, so can find and instantly populate all of those fields automagically. OnlyKey requires you to press a button to tell it what it should do.</p>
+<p>So for convenience and scale, I aim to have my most commonly used or not-password-manager-managed passwords configured on some of the OnlyKey long press actions, and the remaining ~75% in KeepassXC.</p>
+<h3 id="less-popular-and-less-oversight-than-yubikey" tabindex="-1">Less popular and less oversight than YubiKey <a class="header-anchor" href="#less-popular-and-less-oversight-than-yubikey"></a></h3>
+<p>Very few people I speak to are aware of the OnlyKey. Lots of who have worked in tech have heard of YubiKey. Yubico who do the YubiKey are also a relatively large company with a large enterprise customer base. This should bring tighter controls, more stringent processes, more sets of eyes etc. It can also leads to diffusion of responsibility and other scale related quality and security issues.</p>
+<p>The OnlyKey, is by CryptoTrust:</p>
+<blockquote>
+<p>CryptoTrust is an innovative provider of specialized secure solutions for businesses and individuals. As an independent security-consulting firm, CryptoTrust’s consultants have years of industry experience in Cybersecurity and internationally recognized security credentials. The specialized experience of CryptoTrust in the DoD and financial services industries enables development of customized security products and services that meet high assurance security standards.</p>
+</blockquote>
+<p><a href="https://crp.to/t/">CryptoTrust Team page</a></p>
+<p>The OnlyKey app, website, docs and generally everything else associated with them makes them out to feel like a significantly smaller operation. This isn't necessarily bad, but it means the OnlyKey probably isn't as battle-tested as YubiKey.</p>
+<h3 id="rough%2C-but-opensource-and-actively-developed-code" tabindex="-1">Rough, but opensource and actively developed code <a class="header-anchor" href="#rough%2C-but-opensource-and-actively-developed-code"></a></h3>
+<p>My own personal assessment is that some of the OnlyKey python code is not the best. But I also think it feels like it's written by security nerds, rather than software engineering nerds. I don't think there's anything wrong with this and would probably be my preference. However, it does mean software engineering nerds will and do have meltdowns about how it looks.</p>
+<p>The OnlyKey is fully open source. You can even get the <a href="https://github.com/trustcrypto/OnlyKey-Firmware">device firmware</a>. Even if the code is a little bit messy, at least that's possible to see, acknowledge and fix, which wouldn't be the case with closed source alternatives. The developer(s?) of OnlyKey actively respond to reviews and posts of their code too.</p>
+<p>YubiKey firmware is largely closed source. They have <a href="https://www.yubico.com/blog/secure-hardware-vs-open-source/">a blog post on it</a> which is basically a very long way of them saying <em>&quot;it was too much money, time and/or effort with too much risk&quot;</em>.  I see why they took that decision, that's their tradeoff for their target market. Whether the OnlyKey is a good idea probably comes down to the intended use and market.</p>
+<h3 id="is-it-secure%3F-relatively%2C-for-the-right-people%2C-like-me%2C-i-think" tabindex="-1">Is it secure? Relatively, for the right people, like me, I think <a class="header-anchor" href="#is-it-secure%3F-relatively%2C-for-the-right-people%2C-like-me%2C-i-think"></a></h3>
+<p>Indeed, some people will scoff at the OnlyKey:</p>
+<blockquote>
+<p>the marginally lower levels of entropy in the hardware random number generator might introduce predictability into key generation leading to blah blah blah</p>
+</blockquote>
+<p>or</p>
+<blockquote>
+<p>that chip is potentially susceptible to hardware decapsulation and probing for physical malicious fault injection blah blah blah</p>
+</blockquote>
+<p>But security often comes down to behavioral economics. Could someone hack this OnlyKey? Like most things: probably somehow. However, nothing I have access to is worth the incredible amounts of time and focus that would be required to successfully coordinate and execute these attacks.</p>
+<p>Nothing is 100% secure. If you are the sort of person who is likely to be targeted by people capable of successfully identifying, intercepting and tampering specifically with your security hardware, then maybe these high effort attacks become a concern. Rather than state sponsored attackers though, for most individuals, the biggest threats are probably script-kiddie automated attacks, keylogging malware and password leaks/reuse. Based on this, I think the OnlyKey would be an appropriate and legitimate improvement for the security of most.</p>
+<h2 id="what-do-others-think-of-the-onlykey%3F" tabindex="-1">What do others think of the OnlyKey? <a class="header-anchor" href="#what-do-others-think-of-the-onlykey%3F"></a></h2>
+<p>I found a few interesting other discussions on the internet. Internet security nerds are capable of incredible analyses and brutal conclusions. Here are a couple of notable things I found</p>
+<h3 id="the-onlykey-implementation-is-definitely-messy-and-controversial" tabindex="-1">The OnlyKey implementation is <em>definitely</em> messy and controversial <a class="header-anchor" href="#the-onlykey-implementation-is-definitely-messy-and-controversial"></a></h3>
+<p>If you're of a technical persuasion, then I think these 2 links are the best resources for an independent assessment of the OnlyKey implementation:</p>
+<ul>
+<li><a href="https://news.ycombinator.com/item?id=21884184">Hackernews post with a bunch of nerds tearing into it</a></li>
+<li><a href="https://dev.to/mpixel/deconstructing-onlykey-agent-401l">dev.to/mpixel with a less critical but thorough analyses of the SSH key derivation, including the challenges of following it - very well done.</a></li>
+</ul>
+<p>They demonstrate extensively that the code is controversial. It's probably not written by a large mature development team, but more likely by 1 or 2 individuals. The code is hard to follow at times, including for people far far more capable than me, and there are a fair few little quality issues.</p>
+<h3 id="the-creators-aren't-perfect%2C-but-clearly-know-some-stuff" tabindex="-1">The creators aren't perfect, but clearly know some stuff <a class="header-anchor" href="#the-creators-aren't-perfect%2C-but-clearly-know-some-stuff"></a></h3>
+<p>The discussion in those 2 links gets quite hard and overly critical in places I think, particular the HN post. However, the authors continue to respond, pointing out a lot of misconceptions in places, and actively accepting and pushing fixes for legitimate issues raised.</p>
+<p>I don't think software without issues is possible, so all we can really aspire for is software with active, enthusiastic and capable maintainers.</p>
+<h3 id="as-much-as-i-like-the-user-experience%2C-others-don't" tabindex="-1">As much as I like the user experience, others don't <a class="header-anchor" href="#as-much-as-i-like-the-user-experience%2C-others-don't"></a></h3>
+<p>These 2 reviews are less technical and more about usage and experience:</p>
+<ul>
+<li><a href="">https://www.scrye.com/wordpress/nirik/2020/04/03/onlykey-review/</a></li>
+<li><a href="">https://jekko.com/2018/11/19/onlykey-color-review-best-u2f-security/</a></li>
+</ul>
+<p>They both don't recommend the OnlyKey, but for less technical reasons such as an ugly engineer's UI, or security concerns for entering the physical pin in a coffeeshop, or criticisms about the durability of the keychain or branding. These don't really impact me but support the argument that these things aren't for everyone.</p>
+<h2 id="conclusion" tabindex="-1">Conclusion <a class="header-anchor" href="#conclusion"></a></h2>
+<p>What is &quot;secure enough&quot; is relative, and depends on your threat model which will be informed by your own risk appetite based on your circumstances. For the vast majority of people, if you're looking for another factor for an MFA setup, OnlyKey is definitely more secure than nothing, and more versatile than most.</p>
+<p>OnlyKey is a newer and less popular security key than others, and as a result, it's still a little bit rough around the edges. This might make it inappropriate for those who might be target of APTs or state sponsored attackers, but if you're one of those people, you probably know that. However, the creators do know their stuff, and are actively improving OnlyKey.</p>
+<p>And finally, the OnlyKey is a fun little device to nerd around with, far more so than a YubiKey. 🤓</p>
+
+  </main>
+
+  <aside class="post__aside">
+    <div class="post__tags">
+      
+        
+        <a href="/tags/tech/">#tech</a>
+      
+        
+        <a href="/tags/security/">#security</a>
+      
+        
+        <a href="/tags/hardware/">#hardware</a>
+      
+    </div>
+
+    <nav class="post__pagination">
+
+        <a href="/posts/2022-02-ulauncher/">
+          <span>Ulauncher speeds up my computer usage</span>
+          <span>→</span>
+        </a>
+
+      
+    </nav>
+  </aside>
+
+</article>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+
+          <ul class="hero__social-links">
+            
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://github.com/1dom/1dom.github.io" target="_blank" rel="noopener noreferrer" >GitHub</a>
+                </li>
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="https://twitter.com/1domio" target="_blank" rel="noopener noreferrer" >Twitter</a>
+                </li>
+              
+            
+
+            
+
+              
+                
+
+                
+                  
+                
+
+                <li>
+                  <a href="/feed.xml" target="_blank" rel="noopener noreferrer" >RSS</a>
+                </li>
+              
+            
+          </ul>
+
+          
+            <p class="footer__attribution">
+            Powered by <a href="https://www.11ty.dev" target="_blank" rel="noopener">11ty</a> based on <a href="https://github.com/yinkakun/eleventy-duo" target="_blank" rel="noopener noreferrer">eleventy-duo</a> 
+            </p>
+          
+
+        </div>
+      </div>
+
+    </footer>
+
+    <script src="/assets/main.31d6cfe0d16ae931b73c.js"></script>
+  </body>
+</html>

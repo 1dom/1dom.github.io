@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href=/posts/2021-10-switch-to-11ty/>
 
-    <link href="/assets/main.5092227d423c86dfa606.css" rel="stylesheet" />
+    <link href="/assets/main.dc286c68490b4a84c2a2.css" rel="stylesheet" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
@@ -89,22 +89,22 @@
           
   
 
-  <a href="/tags/AWS/" class="post-tag">#AWS</a>
-
-
-  
-
-  <a href="/tags/CLI/" class="post-tag">#CLI</a>
-
-
-  
-
   <a href="/tags/tech/" class="post-tag">#tech</a>
 
 
   
 
   <a href="/tags/blog/" class="post-tag">#blog</a>
+
+
+  
+
+  <a href="/tags/AWS/" class="post-tag">#AWS</a>
+
+
+  
+
+  <a href="/tags/CLI/" class="post-tag">#CLI</a>
 
 
   
@@ -120,6 +120,16 @@
   
 
   <a href="/tags/degoogle/" class="post-tag">#degoogle</a>
+
+
+  
+
+  <a href="/tags/security/" class="post-tag">#security</a>
+
+
+  
+
+  <a href="/tags/hardware/" class="post-tag">#hardware</a>
 
 
   
@@ -150,21 +160,21 @@
   <main class="post__content">
     <p>Despite talking about how and why <em>everyone else</em> should write a blog, I have clearly ignored my own advice and instead spent time switching this blog from Jekyll to <a href="https://www.11ty.dev/">11ty</a>, a JS based static site generator. It was fun to mess around with 11ty and Github actions, and it gives me something to write about.</p>
 <p><strong>NOTE</strong>: <em>I originally wrote this around Sept/Oct '21. I've been playing with eleventy internally, but only just got round to pushing and publishing Jan '22.</em></p>
-<h2>Why change from Jekyll</h2>
+<h2 id="why-change-from-jekyll" tabindex="-1">Why change from Jekyll <a class="header-anchor" href="#why-change-from-jekyll"></a></h2>
 <p>There's no right or wrong software to use in most cases. I feel a good piece of software shouldn't get in the way. Jekyll can get in the way by being quite slow as a result of being bloated with age. In Jekyll's defence, it was also largely my own lack of time and patience for Ruby that contributed to the change.</p>
 <p>Jekyll was nice when it worked, but I had a few different issues getting it to build with certain plugins and settings in Github actions vs my local machines, and fixing often found me Googling basic Ruby stuff.</p>
 <p>I spend my personal and professional time nerding around - I know how much I don't know, and I don't know Ruby. It's probably not hard to learn, but I just don't want to have to learn it <em>right</em> now.</p>
-<h2>Why change to 11ty</h2>
+<h2 id="why-change-to-11ty" tabindex="-1">Why change to 11ty <a class="header-anchor" href="#why-change-to-11ty"></a></h2>
 <p>I do a lot of writing and note taking in markdown, and 11ty is also a markdown based static site generator, like Jekyll.</p>
 <p>I write a bunch of Typescript and Javascript for my day job. It's not my favourite language, but I'm more fluent in it than most other languages these days. 11ty is written in Javascript, so it all feels a lot more familiar to me. It's also a lot quicker, lighter, smaller and easier for me in general compared to Jekyll.</p>
 <p>11ty is also one of the newer static site generators, and I like shiny new thing.</p>
-<h2>For the indecisive: running Jekyll and 11ty together</h2>
+<h2 id="for-the-indecisive%3A-running-jekyll-and-11ty-together" tabindex="-1">For the indecisive: running Jekyll and 11ty together <a class="header-anchor" href="#for-the-indecisive%3A-running-jekyll-and-11ty-together"></a></h2>
 <p>Just in case I wanted to go back, I extracted my 2 - 3 posts from Jekyll into a separate folder outside the Jekyll hierarchy. I then setup <a href="https://github.com/yinkakun/eleventy-duo">eleventy-duo</a> and symlinked the posts folder in there. In github, I now also have 2 actions: one which builds Jekyll, one which builds 11ty, set to build when either CMS or posts are updated.</p>
 <pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">name</span><span class="token punctuation">:</span> Eleventy<br><br><span class="token key atrule">on</span><span class="token punctuation">:</span><br>  <span class="token key atrule">workflow_dispatch</span><span class="token punctuation">:</span><br>  <span class="token key atrule">push</span><span class="token punctuation">:</span><br>    <span class="token key atrule">paths</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> eleventy<span class="token important">*/**</span><br>      <span class="token punctuation">-</span> posts</code></pre>
 <p>(I also include <code>workflow_dispatch</code> in most actions so I can kick them off via github UI if needed.)</p>
 <p>I was hoping to be able to get them both working flawlessly together, I created separate Github Action workflows for Jekyll and 11ty, triggering each on changes to its own folder. However, minor differences around post handling thwarted me: I had to manually move the post dates from the filenames into the frontmatter for 11ty.</p>
 <p>It probably is possible to get 11ty to use Jekyll's post dates, or vice-versa, but I'd already decided I preferred 11ty - and it was hardly a vast anthology of posts to manually update - so there was no need to get the Jekyll side working. I might pick it up again later if I try another static site generator.</p>
-<h2>Conclusion</h2>
+<h2 id="conclusion" tabindex="-1">Conclusion <a class="header-anchor" href="#conclusion"></a></h2>
 <p>11ty powers this blog now. It's faster and newer than Jekyll, and a lot easier if you're familiar with JS. Ultimately, both are markdown based static site generators, so it's easy to migrate. It's probably possible to have a fully working hybrid where the same set of content markdown files power a few different static site generators to see how they compare, but that's overkill here, for the time being.</p>
 <p>I'm starting to feel like these sorts of migrations and tech stack swaps are almost a right of passage for anyone exploring static site generators - especially for a personal blog!</p>
 

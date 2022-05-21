@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href=/posts/2020-06-aws-autocomplete/>
 
-    <link href="/assets/main.5092227d423c86dfa606.css" rel="stylesheet" />
+    <link href="/assets/main.dc286c68490b4a84c2a2.css" rel="stylesheet" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
@@ -89,22 +89,22 @@
           
   
 
-  <a href="/tags/AWS/" class="post-tag">#AWS</a>
-
-
-  
-
-  <a href="/tags/CLI/" class="post-tag">#CLI</a>
-
-
-  
-
   <a href="/tags/tech/" class="post-tag">#tech</a>
 
 
   
 
   <a href="/tags/blog/" class="post-tag">#blog</a>
+
+
+  
+
+  <a href="/tags/AWS/" class="post-tag">#AWS</a>
+
+
+  
+
+  <a href="/tags/CLI/" class="post-tag">#CLI</a>
 
 
   
@@ -120,6 +120,16 @@
   
 
   <a href="/tags/degoogle/" class="post-tag">#degoogle</a>
+
+
+  
+
+  <a href="/tags/security/" class="post-tag">#security</a>
+
+
+  
+
+  <a href="/tags/hardware/" class="post-tag">#hardware</a>
 
 
   
@@ -153,16 +163,16 @@
 <pre class="language-bash"><code class="language-bash">✔ ~/codeexperiments/1dom <br><span class="token number">12</span>:33 $ aws dynamodb describe-t<span class="token operator">&lt;</span>PRESSED TAB<span class="token operator">></span><br>describe-table      describe-table-replica-auto-scaling     describe-time-to-live </code></pre>
 <p>With AWS CLI v1, autocomplete only extends to service names, API actions and some parameters:</p>
 <pre class="language-bash"><code class="language-bash">✔ ~/codeexperiments/1dom <br><span class="token number">12</span>:33 $ aws dynamodb describe-table --<span class="token operator">&lt;</span>PRESSED TAB<span class="token operator">></span><br>--ca-bundle              --cli-connect-timeout    --cli-read-timeout       --endpoint-url           --no-sign-request        --profile                --table-name<br>--cli-auto-prompt        --cli-input-json         --color                  --generate-cli-skeleton  --no-verify-ssl          --query                  --version<br>--cli-binary-format      --cli-input-yaml         --debug                  --no-paginate            --output                 --region </code></pre>
-<h2>AWS CLIv2</h2>
+<h2 id="aws-cliv2" tabindex="-1">AWS CLIv2 <a class="header-anchor" href="#aws-cliv2"></a></h2>
 <p>If you haven't already, I'd highly recommend <a href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html">upgrading to AWS CLI v2</a>. You probably won't notice much difference day-to-day but it has a <a href="https://github.com/aws/aws-cli/blob/v2/CHANGELOG.rst">bunch of helpful extra little features</a>, including SSO CLI management.</p>
 <p>It also expands the autocompletion functionality to include resource names! If your AWS CLI has valid credentials, you can tab complete specific resources in the account that your credentials are configured to access:</p>
 <pre class="language-bash"><code class="language-bash">✔ ~/codeexperiments/1dom <br><span class="token number">12</span>:33 $ aws dynamodb describe-table --table-name <span class="token operator">&lt;</span>PRESSED TAB<span class="token operator">></span><br>1domio-statelock</code></pre>
-<h2>Setup</h2>
+<h2 id="setup" tabindex="-1">Setup <a class="header-anchor" href="#setup"></a></h2>
 <p>The AWS docs are pretty comprehensive on <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-completion.html#cli-command-completion-configure">how to set up autocomplete with various shells and OS.</a></p>
 <p>For my personal laptop setup (Fedora 32 &amp; bash), I was able to squash the process to a oneliner. If you're using bash, and <code>aws</code> is in your $PATH, you can probably enable autocomplete with just this:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"complete -C '<span class="token variable"><span class="token variable">$(</span><span class="token function">which</span> aws_completer<span class="token variable">)</span></span>' aws"</span> <span class="token operator">>></span> ~/.bashrc</code></pre>
 <p>If you're using something other than bash, then I'd recommend you scan through the AWS docs on setting up the CLI. The process in most cases is locate the aws_complete binary, and add a line to your shell setup that adds that binary as an autocompleter.</p>
-<h2>tl:dr;</h2>
+<h2 id="tl%3Adr%3B" tabindex="-1">tl:dr; <a class="header-anchor" href="#tl%3Adr%3B"></a></h2>
 <p>AWS CLI has tab completion support, even down to resource names. <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-completion.html">Go read the AWS docs for instructions on setting it up,</a> or use the oneliner above if you're using bash.</p>
 
   </main>
