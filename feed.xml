@@ -5,7 +5,7 @@
   <link href="1dom.io/feed.xml" rel="self"/>
   <link href="1dom.io/"/>
   
-    <updated>2022-05-21T00:00:00+00:00</updated>
+    <updated>2022-05-28T00:00:00+00:00</updated>
   
   <id>1dom.io</id>
   <author>
@@ -370,6 +370,29 @@ For OnlyKey on-the-go visit https://apps.crp.to
 <p>What is &quot;secure enough&quot; is relative, and depends on your threat model which will be informed by your own risk appetite based on your circumstances. For the vast majority of people, if you're looking for another factor for an MFA setup, OnlyKey is definitely more secure than nothing, and more versatile than most.</p>
 <p>OnlyKey is a newer and less popular security key than others, and as a result, it's still a little bit rough around the edges. This might make it inappropriate for those who might be target of APTs or state sponsored attackers, but if you're one of those people, you probably know that. However, the creators do know their stuff, and are actively improving OnlyKey.</p>
 <p>And finally, the OnlyKey is a fun little device to nerd around with, far more so than a YubiKey. 🤓</p>
+
+    ]]>
+      </content>
+    </entry>
+  
+    
+    <entry>
+      <title>I should write short unstructured posts, or longer structured ones</title>
+      <link href="1dom.io/posts/2022-05-writing-reflection/"/>
+      <updated>2022-05-28T00:00:00+00:00</updated>
+      <id>1dom.io/posts/2022-05-writing-reflection/</id>
+      <content type="html">
+        <![CDATA[
+      <p>I'd like to share more thoughts by posting more on here. I go through phases of motivation to write - these phases often stop I think because I try to haphazardly write more than I'm capable of these days.</p>
+<p>For example, I started writing the <a href="/posts/2022-02-onlykey/">OnlyKey post</a> back in February. It was intended to be a quick reminder to myself of how I setup and use the OnlyKey and some things I like about it. This seemed like something I could do in a couple of paragraphs over an an hour or so. I have a similar style - unfinished - post but about the Oculus Quest. In both cases, I feel I hugely underestimated <em>something</em>.</p>
+<p>I think because I start out intending to write a short post, I don't come up with any structure in advance, and I quickly start writing. So after some overthinking, a few paragraphs in and I'd realise I haven't even made a dent in what I wanted to communicate, but I had already written more than I'd intended.</p>
+<p>I then try to just carry on, but eventually have to stop. I don't want to come back and do anymore writing, because I failed to succeed with a quick post, and it wasn't much fun where I left it, without a plan.</p>
+<p>As soon as I'm a few paragraphs in, and I feel I haven't made a dent, and I don't really have a plan, I should stop and recognise I have 2 potential options to avoid disappointment:</p>
+<ul>
+<li>Accept it's going to be a long post, probably not finished today, and try get excited about breaking it down, and taking a slower, more structured approach to writing it.</li>
+<li>Stop. Write a few more words to wrap up, and post it.</li>
+</ul>
+<p>Here are a few more words to myself: don't overthink <em>everything</em>. Sometimes less is more. Some skills, for me, take practice and upkeep. It looks like writing is one of those skills, and I've neglected it since leaving academia. One of the many reasons to keep trying to write and post more things!</p>
 
     ]]>
       </content>
