@@ -5,7 +5,7 @@
   <link href="1dom.io/feed.xml" rel="self"/>
   <link href="1dom.io/"/>
   
-    <updated>2022-05-28T00:00:00+00:00</updated>
+    <updated>2022-05-29T00:00:00+00:00</updated>
   
   <id>1dom.io</id>
   <author>
@@ -393,6 +393,36 @@ For OnlyKey on-the-go visit https://apps.crp.to
 <li>Stop. Write a few more words to wrap up, and post it.</li>
 </ul>
 <p>Here are a few more words to myself: don't overthink <em>everything</em>. Sometimes less is more. Some skills, for me, take practice and upkeep. It looks like writing is one of those skills, and I've neglected it since leaving academia. One of the many reasons to keep trying to write and post more things!</p>
+
+    ]]>
+      </content>
+    </entry>
+  
+    
+    <entry>
+      <title>Free Google Domain Apps NOT going away, this time.</title>
+      <link href="1dom.io/posts/2022-05-google-domain-apps-returning/"/>
+      <updated>2022-05-29T00:00:00+00:00</updated>
+      <id>1dom.io/posts/2022-05-google-domain-apps-returning/</id>
+      <content type="html">
+        <![CDATA[
+      <p>Google changed their mind: <em>&quot;...we’ve added an offer for those using G Suite legacy free edition for non-commercial use, such as individuals and families, to opt out of the transition.&quot;</em></p>
+<h2 id="i-received-an-e-mail-saying-non-commercial-use-can-continue" tabindex="-1">I received an e-mail saying non-commercial use can continue <a class="header-anchor" href="#i-received-an-e-mail-saying-non-commercial-use-can-continue"></a></h2>
+<p>I received an e-mail titled <em>&quot;[Action Required] Upgrade your G Suite legacy free edition subscriptions to Google Workspace by June 27, 2022&quot;</em> on 24/05/2022 saying:</p>
+<blockquote>
+<p>Dear Administrator,</p>
+<p>We previously notified you that you’ll need to upgrade from the G Suite legacy free edition to Google Workspace by June 1, 2022, or your account would be automatically upgraded. However, we've recently updated our timeline for the transition and you now have until June 27, 2022 to take action.</p>
+<p>Along with this change, we’ve added an offer for those using G Suite legacy free edition for non-commercial use, such as individuals and families, to opt out of the transition.</p>
+</blockquote>
+<h2 id="how%3F-login-to-control-panel-and-go-through-legacy-transition-process." tabindex="-1">How? Login to control panel and go through legacy transition process. <a class="header-anchor" href="#how%3F-login-to-control-panel-and-go-through-legacy-transition-process."></a></h2>
+<p>From this support page: <a href="https://apps.google.com/supportwidget/articlehome?hl=en&amp;article_url=https%3A%2F%2Fsupport.google.com%2Fa%2Fanswer%2F2855120%3Fhl%3Den&amp;product_context=2855120&amp;product_name=UnuFlow&amp;trigger_context=a">https://apps.google.com/supportwidget/articlehome?hl=en&amp;article_url=https%3A%2F%2Fsupport.google.com%2Fa%2Fanswer%2F2855120%3Fhl%3Den&amp;product_context=2855120&amp;product_name=UnuFlow&amp;trigger_context=a</a></p>
+<blockquote>
+<p>For individuals and families using your account for non-commercial purposes, you can continue using the G Suite legacy free edition and opt out of the transition to Google Workspace by clicking <a href="https://admin.google.com/?action_id=SE_SELF_TRANSITION&amp;utm_source=helpcenter">here</a> (requires a super administrator account) or in the Google Admin console.</p>
+</blockquote>
+<p>Clicking <a href="https://admin.google.com/?action_id=SE_SELF_TRANSITION&amp;utm_source=helpcenter">there</a> and starting the transition process eventually gives an option declare it's non-commercial and keep the account.</p>
+<h2 id="so...-good%3F-but-this-just-is-another-reason-to-try-selfhost-and-degoogle-more." tabindex="-1">So... Good? But this just is another reason to try selfhost and degoogle more. <a class="header-anchor" href="#so...-good%3F-but-this-just-is-another-reason-to-try-selfhost-and-degoogle-more."></a></h2>
+<p>I wrote a <a href="/posts/2022-02-google-domain-apps-going/">post bemoaning Google's original decision to discontinue free legacy domain apps</a> a few months back. Whilst I appreciate being able to keep the account, the spirit of my original post still stands.</p>
+<p>At any moment, Google could change their mind again, so I should still try make some progress on degoogling.</p>
 
     ]]>
       </content>
